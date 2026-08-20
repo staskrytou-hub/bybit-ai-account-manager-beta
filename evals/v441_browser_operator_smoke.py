@@ -27,10 +27,14 @@ def main() -> None:
     old_local = os.environ.get("LOCALAPPDATA")
     old_pf = os.environ.get("PROGRAMFILES")
     old_pfx86 = os.environ.get("PROGRAMFILES(X86)")
+    old_pw6432 = os.environ.get("PROGRAMW6432")
     try:
         os.environ["LOCALAPPDATA"] = str(local)
         os.environ["PROGRAMFILES"] = str(TEMP / "ProgramFiles")
         os.environ["PROGRAMFILES(X86)"] = str(TEMP / "ProgramFilesX86")
+        # Keep discovery deterministic even when the host has a real browser
+        # installed under PROGRAMW6432.
+        os.environ["PROGRAMW6432"] = str(TEMP / "ProgramFilesW6432")
         found = bo._find_browser(force_windows=True)
         assert found, found
         assert found["name"] == "Google Chrome", found
@@ -48,6 +52,10 @@ def main() -> None:
             os.environ.pop("PROGRAMFILES(X86)", None)
         else:
             os.environ["PROGRAMFILES(X86)"] = old_pfx86
+        if old_pw6432 is None:
+            os.environ.pop("PROGRAMW6432", None)
+        else:
+            os.environ["PROGRAMW6432"] = old_pw6432
 
     print("v4.4.1 browser discovery / Bybit allowlist smoke: PASS")
 
@@ -57,3 +65,4 @@ if __name__ == "__main__":
         main()
     finally:
         shutil.rmtree(TEMP, ignore_errors=True)
+
