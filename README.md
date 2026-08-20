@@ -139,7 +139,7 @@ The repository also includes targeted smoke/regression scripts for core risk, ex
 
 - Python source compilation: **PASS**
 - deterministic `evals/run_local.py`: **PASS**
-- targeted smoke/regression scripts: **23 / 23 PASS**
+- targeted smoke/regression scripts: **24 / 24 PASS**
 
 These checks validate code paths and regression expectations only; they do not prove live exchange readiness or profitability.
 
@@ -155,3 +155,4 @@ These checks validate code paths and regression expectations only; they do not p
 ## Disclaimer
 
 Automated crypto trading can result in substantial financial loss. This repository is an experimental software portfolio project, not a recommendation to trade or a promise of returns.
+
