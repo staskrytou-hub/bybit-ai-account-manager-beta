@@ -2,7 +2,13 @@
 
 An experimental desktop **AI account-management agent for Bybit**. The project combines deterministic trading/risk components with AI-assisted research, opportunity analysis, account monitoring, execution verification, and constrained browser automation.
 
-> **Beta / portfolio project.** This repository demonstrates AI-agent orchestration, technical product design, automation, risk gates, stateful workflows, and regression testing. It is not financial advice and should be validated with paper trading or testnet before any live use.
+> **Active beta / portfolio project.** This codebase is under frequent iteration: patches, refactors, regression checks, and behavioural changes are expected as new edge cases are discovered. It is not a finished production release. The repository demonstrates AI-agent orchestration, technical product design, automation, risk gates, stateful workflows, and regression testing. It is not financial advice and should be validated with paper trading or testnet before any live use.
+
+## Development status
+
+This repository should be treated as a **working beta**, not a stable release. The development process is intentionally iterative: run the system, observe behaviour, identify an edge case, patch it, add or update a regression check, and repeat.
+
+Because exchange APIs, browser flows, market conditions, and agent behaviour can change, the code may receive frequent patches and internal revisions. A recent commit should therefore be viewed as the current experimental state rather than a long-term stable API or release contract.
 
 ## Why I built it
 
@@ -139,6 +145,8 @@ These checks validate code paths and regression expectations only; they do not p
 
 ## Beta limitations
 
+- **active development with frequent patches and refactors**
+- interfaces and internal behaviour may change between commits
 - no claim of profitability or autonomous live-trading readiness
 - exchange/browser behaviour can change and requires revalidation
 - live execution paths require explicit credentials and independent testing
