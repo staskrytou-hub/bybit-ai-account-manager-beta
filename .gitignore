@@ -1,0 +1,42 @@
+# Secrets / local credentials
+.env
+.env.local
+.env.*
+!.env.example
+.bybit.env
+*.dpapi
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Runtime state: may contain account/session/private data
+data/*
+!data/.gitkeep
+logs/*
+!logs/.gitkeep
+workspace/*
+!workspace/.gitkeep
+
+# Browser/session artifacts
+**/bybit_browser_profile*/
+**/bybit_browser_session*.json
+
+# Build/package artifacts
+build/
+build-core/
+dist/
+dist-core/
+*.spec
+build-v*.log
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
